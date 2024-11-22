@@ -3,6 +3,7 @@
 Hands-on-Lab for Cortex Analyst
 
 I. Getting started with Cortex Analyst
+
 https://quickstarts.snowflake.com/guide/getting_started_with_cortex_analyst/index.html#0
 
 II. Advanced capabilities with Cortex Analyst
