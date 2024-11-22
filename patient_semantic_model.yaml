@@ -1,0 +1,640 @@
+name: patient_semantic_model
+tables:
+  - name: PATIENT_METRICS
+    description: '  '
+    base_table:
+      database: CORTEX_ANALYST_DEMO
+      schema: MEDICAL
+      table: PATIENT_METRICS
+    dimensions:
+      - name: SNOWFLAKE_REALID
+        synonyms:
+          - '  '
+        description: Snowflake Real ID__
+        expr: SNOWFLAKE_REALID
+        data_type: TEXT
+        sample_values:
+          - ZLGQ00AUFANVCAIGJPS4ZZVIZRSJQAOPZWU4
+          - ZLGQ00AUFANVD3ZPTJNMRA5MXRHORXNH4LI4
+          - ZLGQ00AUFANVGQ565EBTARXNVCGYIVB6B4IM
+          - ZLGQ00AUFANVICBRHHMV26ZY33QRLWJ2QPUA
+          - ZLGQ00AUFANVJ4DWUBEHISHEQLQ5KI3IB5IA
+      - name: FIRST_NAME
+        synonyms:
+          - '  '
+        description: First Name of the Patient__
+        expr: FIRST_NAME
+        data_type: TEXT
+        sample_values:
+          - Michal
+          - Janee
+          - Sherryl
+          - Elvia
+          - Dewayne
+      - name: LAST_NAME
+        synonyms:
+          - '  '
+        description: '  '
+        expr: LAST_NAME
+        data_type: TEXT
+        sample_values:
+          - O'Keefe
+          - Rodriguez
+          - Schuster
+          - Runolfsdottir
+          - Heidenreich
+      - name: PHONE_NUMBER
+        synonyms:
+          - '  '
+        description: Patient contact information, including phone numbers.__
+        expr: PHONE_NUMBER
+        data_type: TEXT
+        sample_values:
+          - 989-135-3517
+          - 517-227-6294
+          - 810-924-9623
+          - 734-405-5997
+          - 231-879-3041
+      - name: PRIMARYADDRESS
+        synonyms:
+          - '  '
+        description: Primary Address of Patients__
+        expr: PRIMARYADDRESS
+        data_type: TEXT
+        sample_values:
+          - 23785 SCHROEDER AVE
+          - 8116 ASBURY PARK
+          - 34171 SYCAMORE DR
+          - 526 E DEWEY ST
+          - 720 W BUNDY AVE
+      - name: POSTCODE
+        synonyms:
+          - '  '
+        description: Patient geographic location, represented by postal code.__
+        expr: POSTCODE
+        data_type: TEXT
+        sample_values:
+          - '48021'
+          - '48228'
+          - '48026'
+          - '48505'
+          - '48080'
+      - name: GENDER
+        synonyms:
+          - '  '
+        description: Gender of the patient.__
+        expr: GENDER
+        data_type: TEXT
+        sample_values:
+          - F
+          - M
+          - None
+      - name: RACE
+        synonyms:
+          - '  '
+        description: Patient race.__
+        expr: RACE
+        data_type: TEXT
+        sample_values:
+          - W
+          - B
+          - A
+          - H
+          - None
+      - name: MARITALSTATUS
+        synonyms:
+          - '  '
+        description: Marital Status__
+        expr: MARITALSTATUS
+        data_type: TEXT
+        sample_values:
+          - S
+          - M
+          - B
+          - None
+          - A
+      - name: PRESENCEOFCHILDREN
+        synonyms:
+          - '  '
+        description: Presence of Children__
+        expr: PRESENCEOFCHILDREN
+        data_type: TEXT
+        sample_values:
+          - None
+          - N
+          - Y
+      - name: PLACE_ETHNICITY_MODE
+        synonyms:
+          - '  '
+        description: Patient's primary ethnicity mode, categorized as White (W), Black
+          (B), Hispanic (H), or Other (A).__
+        expr: PLACE_ETHNICITY_MODE
+        data_type: TEXT
+        sample_values:
+          - W
+          - B
+          - H
+          - A
+      - name: RACE_DESC
+        synonyms:
+          - '  '
+        description: Patient race description.__
+        expr: RACE_DESC
+        data_type: TEXT
+        sample_values:
+          - White
+          - Black or African American
+          - Asian
+          - Hispanic or Latino
+          - N/A
+      - name: RESIDENCY_OWNERRENTERINFERRED
+        synonyms:
+          - '  '
+        description: Residency Owner/Renter Inferred__
+        expr: RESIDENCY_OWNERRENTERINFERRED
+        data_type: TEXT
+        sample_values:
+          - O
+          - R
+          - None
+      - name: LANGUAGE_INFERRED
+        synonyms:
+          - '  '
+        description: Language inferred as primary means of communication.__
+        expr: LANGUAGE_INFERRED
+        data_type: TEXT
+        sample_values:
+          - Not Hispanic
+          - N/A
+          - Prefers Spanish
+          - English Only (does not speak Spanish)
+          - Both Spanish and English
+      - name: OCCUPATION
+        synonyms:
+          - '  '
+        description: Occupation of the patient.__
+        expr: OCCUPATION
+        data_type: TEXT
+        sample_values:
+          - Employed
+          - N/A
+          - Retired, Homemaker or Student
+          - Self-Employed
+      - name: DIAG_LANGUAGE
+        synonyms:
+          - '  '
+        description: Primary language spoken by the patient.__
+        expr: DIAG_LANGUAGE
+        data_type: TEXT
+        sample_values:
+          - english
+          - german
+      - name: DIAG_DESCRIPTION
+        synonyms:
+          - '  '
+        description: Diagnosis descriptions for patients, including various medical
+          conditions and examination types.__
+        expr: DIAG_DESCRIPTION
+        data_type: TEXT
+        sample_values:
+          - heart failure, unspecified (*There are also more specific ICD-10 codes,
+            if applicable, e.g., left ventricular failure [I50.1], acute systolic
+            (congestive) heart failure [I50.21], chronic systolic (congestive) heart
+            failure [I50.22], etc.)
+          - encounter for general adult medical examination without abnormal findings
+          - coronary artery atherosclerosis of unspecified type of vessel, native,
+            or graft
+          - diabetes mellitus without mention of complications, type II or unspecified
+            type, not stated as uncontrolled
+          - encounter for immunization (ICD-10 code required first for any routine
+            childhood examination.)
+      - name: CLINICAL_NOTES
+        synonyms:
+          - '  '
+        description: Clinical notes from patient visits, including symptoms, treatment
+          plans, and assessment of patient's condition.__
+        expr: CLINICAL_NOTES
+        data_type: TEXT
+        sample_values:
+          - None
+          - Patient reports that depressive symptoms continue. Symptoms are reported
+            to be more frequent and/or more intense. Anergia is present. Increased
+            symptoms of anhedonia are present. Patient’s difficulty with concentrating
+            has not changed. Patient reports continued feelings of sadness and occasional
+            guilt. Sleep has improved with the use of PRN Ambient CR at HS. Patient
+            convincingly denies suicidal ideas or intention.
+          - 'Patient is a 46 year old Hispanic male presenting for continuation of
+            chemotherapy for previously diagnosed B-cell multicentric lymphoma. Patient
+            was started on CHOP chemotherapy last week and has been doing very well
+            since receiving doxorubicin. Patient’s lymph nodes have gotten much smaller.
+            Patient reports some loose stool, yet improved with metronidazole. Current
+            medications include prednisolone. Assessment: patient is in a strong partial
+            remission based on today’s physical exam. He is also doing very well since
+            starting chemotherapy. A CBC today was unremarkable and adequate for chemotherapy.
+            Patient was given oral cyclophosphamide and furosemide and instructed
+            to take at home.'
+    time_dimensions:
+      - name: LAST_APPT_DATE
+        synonyms:
+          - '  '
+        description: Date of the patient's most recent appointment.__
+        expr: LAST_APPT_DATE
+        data_type: DATE
+        sample_values:
+          - '2023-12-06'
+          - '2023-12-08'
+          - '2023-12-09'
+          - '2023-12-28'
+          - '2023-12-15'
+    measures:
+      - name: SOURCE_MEMBER_ID
+        synonyms:
+          - '  '
+        description: Unique identifier for each patient member.__
+        expr: SOURCE_MEMBER_ID
+        data_type: NUMBER
+        sample_values:
+          - '-1928044619294057533'
+          - '-8208863799169675966'
+          - '3426435820613937880'
+          - '4921589870100664825'
+          - '-1757402718808040756'
+      - name: ZIPCODE
+        synonyms:
+          - '  '
+        description: Patient geographic location, represented by their zip code.__
+        expr: ZIPCODE
+        data_type: NUMBER
+        sample_values:
+          - '48021'
+          - '48228'
+          - '48026'
+          - '48505'
+          - '48080'
+      - name: LONGITUDE
+        synonyms:
+          - '  '
+        description: Geographic location of patient's longitude.__
+        expr: LONGITUDE
+        data_type: FLOAT
+        sample_values:
+          - '-82.9371793'
+          - '-83.2061095'
+          - '-82.9539646'
+          - '-83.6965047'
+          - '-83.7151754'
+      - name: LATITUDE
+        synonyms:
+          - '  '
+        description: Geographic location of the patient.__
+        expr: LATITUDE
+        data_type: FLOAT
+        sample_values:
+          - '42.4713737'
+          - '42.3524534'
+          - '42.5480642'
+          - '43.0451962'
+          - '43.0747378'
+      - name: AGE
+        synonyms:
+          - '  '
+        description: Age of patients.__
+        expr: AGE
+        data_type: NUMBER
+        sample_values:
+          - '38'
+          - '28'
+          - '39'
+          - '35'
+          - '27'
+      - name: REGULARLYVISITSDOCTOR
+        synonyms:
+          - '  '
+        description: Percentage of patients who regularly visit their doctor.__
+        expr: REGULARLYVISITSDOCTOR
+        data_type: NUMBER
+        sample_values:
+          - '49'
+          - '40'
+          - '46'
+          - '19'
+          - '16'
+      - name: FREQUENTVOTER
+        synonyms:
+          - '  '
+        description: Number of times a patient has voted in a survey or poll.__
+        expr: FREQUENTVOTER
+        data_type: NUMBER
+        sample_values:
+          - '66'
+          - '77'
+          - '20'
+          - '79'
+          - '36'
+      - name: EDUCATION
+        synonyms:
+          - '  '
+        description: Level of education achieved by the patient.__
+        expr: EDUCATION
+        data_type: NUMBER
+        sample_values:
+          - '1'
+          - '2'
+          - None
+          - '3'
+          - '4'
+      - name: VEHICLE
+        synonyms:
+          - '  '
+        description: Vehicle Type__
+        expr: VEHICLE
+        data_type: NUMBER
+        sample_values:
+          - '1'
+          - None
+          - '2'
+          - '3'
+      - name: GENERATIONSINHOUSEHOLD
+        synonyms:
+          - '  '
+        description: Number of generations living in the patient's household.__
+        expr: GENERATIONSINHOUSEHOLD
+        data_type: NUMBER
+        sample_values:
+          - '1'
+          - '2'
+          - '3'
+          - None
+      - name: HOUSEHOLDSIZE
+        synonyms:
+          - '  '
+        description: Number of household members.__
+        expr: HOUSEHOLDSIZE
+        data_type: NUMBER
+        sample_values:
+          - '1'
+          - '5'
+          - '3'
+          - '4'
+          - '2'
+      - name: NUMBEROFADULTS
+        synonyms:
+          - '  '
+        description: Number of Adults__
+        expr: NUMBEROFADULTS
+        data_type: NUMBER
+        sample_values:
+          - '1'
+          - '5'
+          - '2'
+          - '4'
+          - '3'
+      - name: NUMBEROFCHILDREN
+        synonyms:
+          - '  '
+        description: Number of Children__
+        expr: NUMBEROFCHILDREN
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '0'
+          - '2'
+          - '1'
+          - '3'
+      - name: HOUSEHOLD_EDUCATION_ZIP
+        synonyms:
+          - '  '
+        description: Household Education Level (measured by zip code)__
+        expr: HOUSEHOLD_EDUCATION_ZIP
+        data_type: NUMBER
+        sample_values:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+      - name: INTEREST_HOMEOPATHIC
+        synonyms:
+          - '  '
+        description: Interest in Homeopathic Medicine__
+        expr: INTEREST_HOMEOPATHIC
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: INTEREST_ARTHRITISMOBILITY
+        synonyms:
+          - '  '
+        description: Interest in Arthritis Mobility__
+        expr: INTEREST_ARTHRITISMOBILITY
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: INTEREST_DIABETIC
+        synonyms:
+          - '  '
+        description: Interest in Diabetic Care__
+        expr: INTEREST_DIABETIC
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: INTEREST_ORGANICFOCUS
+        synonyms:
+          - '  '
+        description: Percentage of patient interest in organic focus.__
+        expr: INTEREST_ORGANICFOCUS
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: INTEREST_ORTHOPEDIC
+        synonyms:
+          - '  '
+        description: Interest in Orthopedic Care__
+        expr: INTEREST_ORTHOPEDIC
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: INTEREST_HEALTHANDMEDICAL
+        synonyms:
+          - '  '
+        description: Interest in Health and Medical__
+        expr: INTEREST_HEALTHANDMEDICAL
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: SINGLEPARENT
+        synonyms:
+          - '  '
+        description: Number of patients who are single parents.__
+        expr: SINGLEPARENT
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: INTEREST_CHARITIES
+        synonyms:
+          - '  '
+        description: Number of charities that a patient is interested in.__
+        expr: INTEREST_CHARITIES
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: INTEREST_EXERCISEHEALTH
+        synonyms:
+          - '  '
+        description: Interest in Exercise and Health__
+        expr: INTEREST_EXERCISEHEALTH
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: DISTRESSED_POVERTY
+        synonyms:
+          - '  '
+        description: Percentage of patients experiencing distressed poverty.__
+        expr: DISTRESSED_POVERTY
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: DISTRESSED_UNEMPLOYMENT
+        synonyms:
+          - '  '
+        description: Percentage of patients who are unemployed and distressed.__
+        expr: DISTRESSED_UNEMPLOYMENT
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: DISTRESSED_POPULATION
+        synonyms:
+          - '  '
+        description: Percentage of patients who are considered distressed.__
+        expr: DISTRESSED_POPULATION
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: REMOTERURALUNDERSERVED
+        synonyms:
+          - '  '
+        description: Percentage of patients who are remote, rural, and underserved.__
+        expr: REMOTERURALUNDERSERVED
+        data_type: NUMBER
+        sample_values:
+          - None
+          - '1'
+      - name: PLACE_INCOMECLASSIFICATIONCODE
+        synonyms:
+          - '  '
+        description: Place of Residence Income Classification Code__
+        expr: PLACE_INCOMECLASSIFICATIONCODE
+        data_type: NUMBER
+        sample_values:
+          - '2'
+          - '1'
+          - '3'
+          - '4'
+          - None
+      - name: PLACE_COSTOFLIVING_COMPOSITEINDEX
+        synonyms:
+          - '  '
+        description: Cost of Living Composite Index__
+        expr: PLACE_COSTOFLIVING_COMPOSITEINDEX
+        data_type: NUMBER
+        sample_values:
+          - '103'
+          - '77'
+          - '88'
+          - '89'
+          - '94'
+      - name: PLACE_COSTOFLIVING_GROCERYINDEX
+        synonyms:
+          - '  '
+        description: Cost of Living Grocery Index for Patients__
+        expr: PLACE_COSTOFLIVING_GROCERYINDEX
+        data_type: NUMBER
+        sample_values:
+          - '99'
+          - '77'
+          - '90'
+          - '95'
+          - '89'
+      - name: PLACE_COSTOFLIVING_HEALTHCAREINDEX
+        synonyms:
+          - '  '
+        description: Cost of Living Healthcare Index__
+        expr: PLACE_COSTOFLIVING_HEALTHCAREINDEX
+        data_type: NUMBER
+        sample_values:
+          - '95'
+          - '94'
+          - '96'
+          - '104'
+          - '115'
+      - name: PLACE_COSTOFLIVING_HOUSINGINDEX
+        synonyms:
+          - '  '
+        description: "Housing Index: The cost of living index for housing in the patient's
+          area.__"
+        expr: PLACE_COSTOFLIVING_HOUSINGINDEX
+        data_type: NUMBER
+        sample_values:
+          - '101'
+          - '51'
+          - '72'
+          - '75'
+          - '87'
+      - name: PLACE_COSTOFLIVING_TRANSPORTATIONINDEX
+        synonyms:
+          - '  '
+        description: Cost of Living Transportation Index__
+        expr: PLACE_COSTOFLIVING_TRANSPORTATIONINDEX
+        data_type: NUMBER
+        sample_values:
+          - '104'
+          - '94'
+          - '96'
+          - '95'
+          - '106'
+      - name: PLACE_COSTOFLIVING_UTILITYINDEX
+        synonyms:
+          - '  '
+        description: Cost of Living Utility Index__
+        expr: PLACE_COSTOFLIVING_UTILITYINDEX
+        data_type: NUMBER
+        sample_values:
+          - '98'
+          - '97'
+          - '109'
+          - '100'
+          - '92'
+      - name: RESIDENCY_LENGTHOFRESIDENCE
+        synonyms:
+          - '  '
+        description: Length of Residence__
+        expr: RESIDENCY_LENGTHOFRESIDENCE
+        data_type: NUMBER
+        sample_values:
+          - '7'
+          - '15'
+          - '5'
+          - '3'
+          - '4'
+      - name: DIAG_ID
+        synonyms:
+          - '  '
+        description: Unique identifier for each patient diagnosis.__
+        expr: DIAG_ID
+        data_type: NUMBER
+        sample_values:
+          - '36'
+          - '54'
+          - '8'
+          - '2'
+          - '55'
