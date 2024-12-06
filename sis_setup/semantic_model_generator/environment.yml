@@ -22,3 +22,4 @@ dependencies:
 - snowflake-snowpark-python=1.18.0
 - streamlit-extras=0.4.0
 - cattrs=23.1.2
+- strictyaml=1.7.3
